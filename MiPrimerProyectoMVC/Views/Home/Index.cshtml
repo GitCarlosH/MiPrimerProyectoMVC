@@ -1,0 +1,35 @@
+﻿@model List<Model.Alumno>
+@{ 
+    ViewBag.Title = "Inicio";
+
+}
+
+<h2 class="page-header">
+    Alumnos
+</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th style="width:200px;">Sexo</thstyle="width:100px;">
+            <th style="width:200px;">Fecha de nacimiento</th>
+            <th style="width:100px;">Nombre</th>
+        </tr>
+
+    </thead> 
+    <tbody>
+        @foreach (var m in Model)
+        {
+            <tr>
+                <th>@(m.Nombre + " " + m.Apellido)</th>
+                <th>@(m.Sexo==1? "Hombre": "Mujer")</th>
+                <th>@m.FechaNacimiento</th>
+                <th>
+                    <a class="btn btn-xs btn-primary btn-block" href="~/home/ver/@m.id">Editar</a>
+                </th>
+            </tr>
+        }
+
+    </tbody>
+</table>
